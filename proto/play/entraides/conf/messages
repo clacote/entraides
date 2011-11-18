@@ -1,0 +1,13 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+# Member fields
+login=Login
+login.note=Votre login pour vous identifier sur Entraides
+password=Mot de passe
+password.note=
+password2=Confirmation
+password2.note=Ressaisissez votre mot de passe
+email=Email
+email.note=
+
