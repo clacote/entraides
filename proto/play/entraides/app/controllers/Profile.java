@@ -23,26 +23,27 @@ public class Profile extends Controller {
 
     public static void registration_email(@Required @Email String email) {
         if (Validation.hasErrors()) {
-            render("Profile/index.html", email);
+            render("Profile/index.html");
         }
-        render("Profile/identite.html", email);
+        session.put("email",email);
+        render("Profile/identite.html");
     }
 
-    public static void save(@Required String login, @Required String password, @Required String password2, @Required @Email String email) {
+    public static void save(@Required String login, @Required String password, @Required String password2, @Email String email) {
         Logger.info("login {" + login + "}, email {" + email +"}");
 
         if (!password.equals(password2)){
             String msg_error_password = "Les mots de passe sont différents";
             Logger.error(msg_error_password);
-            render("Profile/identite.html", msg_error_password, login, password, email);
+            render("Profile/identite.html", msg_error_password, login, password);
         }
         if (validation.hasErrors()) {
             Logger.error(validation.errors().toString());
-            render("Profile/identite.html", login, password, email);
+            render("Profile/identite.html", login);
         }
                 
         Member member = new Member(login);
-        member.email = email;
+        member.email = session.get("email");;
         member.password = password;
         member.updateProfile();
         flash.success("Profil enregistré!");
@@ -54,6 +55,6 @@ public class Profile extends Controller {
         Logger.info("Profil " + login);
         Member member = Member.findByLogin(login);
         Logger.info("Profil " + member);
-        render(member);
+        render("Profile/show.html",member);
     }
 }

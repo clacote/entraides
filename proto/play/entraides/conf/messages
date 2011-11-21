@@ -1,6 +1,8 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+profil.identite.titre=Mon identité
+profil.identite.submit=M'inscrire
 # Member fields
 login=Login
 login.note=Votre login pour vous identifier sur Entraides

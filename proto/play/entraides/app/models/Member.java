@@ -28,21 +28,13 @@ public class Member extends Model {
     public String login;
     @Required
     public String email;
-    public String firstname;
     @Required
     public String password;
-    public String lastname;
-    /** Name under which he wants to be displayed */
-    @Required
-    public String displayName;
+
     /** User-defined description, potentially as MarkDown */
     @Lob
-    @Required
+    //@Required
     public String description;
-    /** Twitter account name */
-    public String twitterName;
-    /** Google+ ID, i.e https://plus.google.com/{ThisFuckingLongNumberInsteadOfABetterId} as seen on Google+' profile link */
-    public String googlePlusId;
 
 
 
@@ -109,7 +101,7 @@ public class Member extends Model {
      */
     @Override
     public String toString() {
-        return displayName;
+        return login;
     }
 
 }

@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="page-header"> 
-        <h1>Mon identité</h1> 
+        <h1>&{'profil.identite.titre'}</h1>
     </div>
     <div class="row"> 
         <div class="span12 columns"> 
@@ -18,8 +18,8 @@
                 <div class="clearfix ${field.error?'error':''}"> 
                     <label for="${field.name}">&{field.name}</label> 
                     <div class="input">
-                        <input class="xlarge disabled" id="${field.id}" name="${field.name}" size="30" type="text" value="${email}" 
-                               placeholder="${email}" disabled/>
+                        <input class="xlarge disabled" id="${field.id}" name="${field.name}" size="30" type="text" value="${session.email}" 
+                               placeholder="${session.email}" disabled/>
                     </div>
                 </div>
                 #{/}
@@ -34,20 +34,20 @@
                 </div>
                 #{/}
                 #{field 'password'}
-                <div class="clearfix ${field.error?'error':''}"> 
-                    <label for="${field.name}">&{field.name}</label> 
-                    <div class="input"> 
-                        <input class="xlarge" id="${field.id}" name="${field.name}" size="30" type="text" value="${member?.password}" />
+                    <div class="clearfix">
+                        <label for="${field.name}">&{field.name}</label>
+                        <div class="input">
+                          <input type="password" id="${field.id}" name="${field.name}" size="30" type="text" />
                         <span class="help-inline">${field.error}</span>
                         <span class="help-block">&{field.name+".note"}</span>
+                        </div>
                     </div>
-                </div>
                 #{/}
                 #{field 'password2'}
                 <div class="clearfix ${field.error?'error':''}"> 
                     <label for="${field.name}">&{field.name}</label> 
                     <div class="input"> 
-                        <input class="xlarge" id="${field.id}" name="${field.name}" size="30" type="text"/>
+                        <input type="password" id="${field.id}" name="${field.name}" size="30" type="text"/>
                         <span class="help-inline">${field.error}</span>
                         <span class="help-block">&{field.name+".note"}</span>
                     </div>
@@ -55,7 +55,7 @@
                 #{/}
             </fieldset>
             <div class="actions">
-                <input type="submit" class="btn primary large" value="M'inscrire"/>
+                <input type="submit" class="btn primary large" value="&{'profil.identite.submit'}"/>
             </div>
             #{/form}
         </div>
