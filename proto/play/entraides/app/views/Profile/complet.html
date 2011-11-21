@@ -1,0 +1,84 @@
+#{extends 'main.html' /}
+#{set title:login +' '+ messages.get('entraides') /}
+#{set 'moreScripts'}
+                <script>
+                    $(function () {
+                        $("[rel=popover]")
+                        .popover({
+                            offset: 10,
+                            trigger : 'focus'
+                        })
+                    })
+                </script>
+#{/set}
+<div class="container">
+    <div class="page-header"> 
+        <h3>&{'profil.registred.success', login} &{'profil.complet.label'}</h3>
+    </div>
+    <div class="row"> 
+        <div class="span12 columns"> 
+            #{form @Profile.update()} 
+            <fieldset>
+                #{field 'localisation'}
+                <div class="clearfix ${field.error?'error':''}"> 
+                    <label for="${field.name}">&{field.name}</label> 
+                    <div class="input"> 
+                        <input class="xlarge" id="${field.id}" name="${field.name}"
+                               rel=popover title="${field.name}" data-content="&{field.name+'.note'}" size="30" type="text" value="${member?.localisation}" />
+                        <span class="help-inline">${field.error}</span>
+                    </div>
+                </div>
+                #{/}
+
+                #{field 'bio'}
+                <div class="clearfix ${field.error?'error':''}"> 
+                    <label for="${field.name}">&{field.name}</label> 
+                    <div class="input"> 
+                        <textarea class="xxlarge" id="${field.id}" name="${field.name}" 
+                           rel=popover title="${field.name}" data-content="&{field.name+'.note'}" rows="3" value="${member?.bio}"></textarea>
+                        <span class="help-inline">${field.error}</span>
+                    </div>
+                </div>
+                #{/}
+            </fieldset>
+            <fieldset>
+                <legend>&{'profil.complet.interests'}</legend>
+                #{field 'interests'}
+                <div class="clearfix ${field.error?'error':''}"> 
+                    <label for="${field.name}">&{field.name}</label> 
+                    <div class="input"> 
+
+                        <ul class="inputs-list">
+                            #{list items:models.Interest.findAll(), as:'interest'}
+                            <span class="checkbox">
+                                <li><label><input type="checkbox" name="${field.name}" value="${interest.name}" ${member?.interests?.contains(interest)?'checked':''} /> <span>${interest.name}</span></label></li>
+                            </span>
+
+                            #{/list}
+                        </ul>                        
+                        <span class="help-inline newline">${field.error}</span>
+                        <span class="help-block newline">&{field.name+".note"}</span>
+                    </div>
+
+                </div><!-- /clearfix -->
+
+                #{/}
+
+                #{field 'newInterests'}
+                <div class="clearfix ${field.error?'error':''}"> 
+                    <label for="${field.name}">&{field.name}</label> 
+                    <div class="input"> 
+                        <input class="xlarge" id="${field.id}" name="${field.name}" size="200" type="text"
+                               rel=popover title="&{field.name}" data-content="&{field.name+'.note'}" value="${newInterests}" /> 
+                        <span class="help-inline">${field.error}</span>
+                    </div> 
+                </div><!-- /clearfix -->
+                #{/}
+            </fieldset>
+            <div class="actions">
+                <input type="submit" class="btn primary large" value="&{'profil.complet.button.submit'}"/>
+            </div>
+            #{/form}
+        </div>
+    </div>
+</div>

@@ -1,3 +1,21 @@
+Interest(play):
+    name: Jardinage
+ 
+Interest(java):
+    name: Informatique
+ 
+Interest(tdd):
+    name: Anglais
+ 
+Interest(hadoop):
+    name: Babysitting
+
+Interest(javascript):
+    name: Poterie
+
+Interest(spring):
+    name: Running
+
 Member(agnes) :
     firstname: Agnès
     lastname: Crépet

@@ -1,5 +1,5 @@
 #{extends 'main.html' /}
-#{set title:'Accueil' /}
+#{set title: messages.get('accueil.title') /}
 
 
 <div class="container">
@@ -9,9 +9,9 @@
         <div class="row">
 
             <div class="span7">
-                <h1>Entraides</h1> 
-                <h2>Echanger des services!</h2>
-                <a class="btn primary large" href="@{Profile.index()}">S'enregistrer</a>
+                <h1>&{'entraides'}</h1> 
+                <h2>&{'accueil.subtitle'}</h2>
+                <a class="btn primary large" href="@{Profile.index()}">&{'accueil.button.register'}</a>
             </div>
             <div class="span7"> 
                 <!-- You must explicitly specify the dimensions of the container element -->

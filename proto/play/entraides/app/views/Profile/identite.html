@@ -1,16 +1,16 @@
 #{extends 'main.html' /}
-#{set title:'Enregistrement Entraides' /}
+#{set title:messages.get('profil.identite.resume') /}
 </br>
 </br>
 
 <div class="container">
     <div class="page-header"> 
-        <h1>&{'profil.identite.titre'}</h1>
+        <h1>&{'profil.identite.resume'}</h1>
     </div>
     <div class="row"> 
         <div class="span12 columns"> 
-            #{if msg_error_password}
-                &{msg_error_password}
+            #{if msg_error}
+                &{msg_error}
             #{/if}
             #{form @Profile.save()} 
             <fieldset>
@@ -55,7 +55,7 @@
                 #{/}
             </fieldset>
             <div class="actions">
-                <input type="submit" class="btn primary large" value="&{'profil.identite.submit'}"/>
+                <input type="submit" class="btn primary large" value="&{'profil.identite.button.submit'}"/>
             </div>
             #{/form}
         </div>

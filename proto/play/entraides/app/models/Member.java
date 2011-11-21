@@ -1,8 +1,10 @@
 package models;
 
-
+import java.util.Set;
+import java.util.TreeSet;
 import javax.persistence.*;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -16,8 +18,7 @@ import play.db.jpa.*;
  */
 @Entity
 @NamedQueries({
-    @NamedQuery(name = Member.QUERY_BYLOGIN, query = "from Member m where m.login=:login"),
-})
+    @NamedQuery(name = Member.QUERY_BYLOGIN, query = "from Member m where m.login=:login"),})
 public class Member extends Model {
 
     static final String QUERY_BYLOGIN = "MemberByLogin";
@@ -30,19 +31,15 @@ public class Member extends Model {
     public String email;
     @Required
     public String password;
-
-    /** User-defined description, potentially as MarkDown */
+    public String localisation;
     @Lob
-    //@Required
-    public String description;
-
-
+    public String bio;
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    public Set<Interest> interests = new TreeSet<Interest>();
 
     public Member(String login) {
         this.login = login;
     }
-
-
 
     /**
      * Find unique member having given login.
@@ -60,8 +57,6 @@ public class Member extends Model {
         return member;
     }
 
-
-
     /**
      * Register user a new Entraides user
      */
@@ -75,6 +70,26 @@ public class Member extends Model {
      */
     public Member updateProfile() {
         save();
+        return this;
+    }
+
+    public Member addInterest(String interest) {
+        if (StringUtils.isNotBlank(interest)) {
+            interests.add(Interest.findOrCreateByName(interest));
+        }
+        return this;
+    }
+
+    public Member addInterests(String... interests) {
+        for (String interet : interests) {
+            addInterest(interet);
+        }
+        return this;
+    }
+
+    public Member updateInterests(String... interests) {
+        this.interests.clear();
+        addInterests(interests);
         return this;
     }
 
@@ -103,5 +118,4 @@ public class Member extends Model {
     public String toString() {
         return login;
     }
-
 }

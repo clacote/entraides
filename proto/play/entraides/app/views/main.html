@@ -8,6 +8,8 @@
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bootstrap-twipsy.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bootstrap-popover.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/bootstrap-dropdown.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
     </head>
@@ -21,24 +23,24 @@
                         <li #{if request.action=="Application.index"}class="active"#{/if}><a href="#">Annonces</a></li>
                     </ul>
                     <ul class="nav secondary-nav">
-                        
-                      
-                        <li><a href="@{Profile.index()}">S'enregistrer</a></li>
-                       
+
+
+                        <li><a href="@{Profile.index()}">&{'accueil.button.register'}</a></li>
+
                     </ul>
                 </div>
             </div>
         </div>
-        
+
         #{if flash.success}
         <div class="alert-message success">${flash.success}</div>
         #{/if}
         #{if flash.error}
         <div class="alert-message error">${flash.error}</div>
         #{/if}
-        
+
         #{doLayout /}
-        
+
         <footer>
             <div class="container">
                 <p>Entraides 2012 - <a href="https://trello.com/board/prototypes-techniques/4ec0851f14720a6bbe2768ba">Trello pour les prototypes techniques Entraides</a></p>
