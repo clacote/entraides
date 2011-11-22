@@ -1,3 +1,4 @@
+
 .DS_Store
 proto/**/tmp/
 proto/**/*.iml
@@ -8,3 +9,8 @@ proto/**/nbproject/
 proto/**/.settings/
 /proto/wicket/entraides/target/
 proto/wicket/target/*
+.idea/*
+out/*
+*.iws
+*.ipr
+*.iml
