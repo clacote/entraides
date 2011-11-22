@@ -1,3 +1,48 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
-#
+
+# ACCUEIL
+accueil.title=Accueil
+
+accueil.subtitle=Echanger des services!
+accueil.button.register=S'enregistrer
+
+# PROFIL
+profil.index.titre=Enregistrement à Entraides
+profil.index.label=Pas encore membre?
+profil.index.button.submit=Rejoignez nous
+profil.identite.title=Enregistrement Entraides
+profil.identite.resume=Mon identité
+profil.identite.button.submit=M'inscrire
+profil.registred.success=Bravo, vous êtes inscrit!
+profil.registred.log=%s a bien été enregistré
+profil.complet.label=Complétez votre profil
+profil.complet.interests=Centres d'intérêts
+profil.complet.success=Merci %s d'avoir complété votre profil!
+profil.complet.log=%s a bien complété son profil!
+profil.complet.button.submit=Enregistrer
+profil.error.password=Les mots de passe sont différents
+profil.error.duplicate.login=Le login %s existe déjà
+
+# Member fields
+login=Login
+login.note=Votre login pour vous identifier sur Entraides
+password=Mot de passe
+password.note=
+password2=Confirmation
+password2.note=Ressaisissez votre mot de passe
+email=Email
+email.note=
+localisation=Localisation
+localisation.note=Votre localisation est importante pour pouvoir afficher les échanges proches de chez vous. Votre adresse n'est pas affichée de manière publique. 
+bio=Bio Express
+bio.note=Donnez quelques informations sur vous et les raisons qui vous incitent à échanger.
+interests=Centres d'intérêts existants
+interests.note=
+newInterests=Autres Centres d'intérêts
+newInterests.note=Vous pouvez saisir de nouveaux centres d'intérêts (en les séparant par une virgule)
+
+# GLOBAL
+error.generic=Please correct these errors.
+entraides=Entraides
+

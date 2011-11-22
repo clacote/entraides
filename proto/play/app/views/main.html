@@ -4,13 +4,47 @@
     <head>
         <title>#{get 'title' /}</title>
         <meta charset="${_response_encoding}">
-        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        <link type="text/css" rel="stylesheet" href="@{'/public/stylesheets/bootstrap.less'}">
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bootstrap-twipsy.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bootstrap-popover.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bootstrap-dropdown.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
     </head>
-    <body>
+    <body style="padding-top: 40px;"> *{ 40px is navigation bar space}*
+        <div class="topbar">
+            <div class="fill">
+                <div class="container">
+                    <h3><a href="@{Application.index()}">Entraides</a></h3>
+                    <ul class="nav">
+                        <li #{if request.action=="Application.index"}class="active"#{/if}><a href="@{Application.index()}">Accueil</a></li>
+                        <li #{if request.action=="Application.index"}class="active"#{/if}><a href="#">Annonces</a></li>
+                    </ul>
+                    <ul class="nav secondary-nav">
+
+
+                        <li><a href="@{Profile.index()}">&{'accueil.button.register'}</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        #{if flash.success}
+        <div class="alert-message success">${flash.success}</div>
+        #{/if}
+        #{if flash.error}
+        <div class="alert-message error">${flash.error}</div>
+        #{/if}
+
         #{doLayout /}
+
+        <footer>
+            <div class="container">
+                <p>Entraides 2012 - <a href="https://trello.com/board/prototypes-techniques/4ec0851f14720a6bbe2768ba">Trello pour les prototypes techniques Entraides</a></p>
+            </div>
+        </footer>
     </body>
 </html>

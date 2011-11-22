@@ -1,4 +1,26 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title: messages.get('accueil.title') /}
 
-#{welcome /}
+
+<div class="container">
+
+
+    <div class="hero-unit">
+        <div class="row">
+
+            <div class="span7">
+                <h1>&{'entraides'}</h1> 
+                <h2>&{'accueil.subtitle'}</h2>
+                <a class="btn primary large" href="@{Profile.index()}">&{'accueil.button.register'}</a>
+            </div>
+            <div class="span7"> 
+                <!-- You must explicitly specify the dimensions of the container element -->
+                <div id="wordcloud" style="width: 250px; height: 250px; position: relative;"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div><!-- /container --> 
