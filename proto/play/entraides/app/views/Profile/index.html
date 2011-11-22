@@ -1,0 +1,38 @@
+#{extends 'main.html' /}
+#{set title: messages.get('entraides') /}
+
+<div class="container">
+    <div class="hero-unit">
+
+        <div class="row">
+            <div class="span8">
+                <h2 align="center">&{'profil.index.label'}</h2>
+                #{form @registration_email()}
+                <fieldset>
+
+                    #{ifErrors}
+                    <p class="error">        
+                        &{'error.generic'}
+                    </p>
+                    #{/ifErrors}
+
+                    #{field 'email'}
+                    <div class="clearfix">
+                        <label for="${field.name}">Email :</label>
+                        <div class="input">
+                            <input type="text" name="${field.name}" 
+                                   value="${email}" class="${field.errorClass}" />
+                        </div>
+                    </div>
+                    #{/field}
+
+                    <div class="actions">
+                        <input type="submit" class="btn" value="&{'profil.index.button.submit'}">
+                    </div>
+                </fieldset>
+                #{/form}
+            </div>
+
+        </div>
+    </div>
+</div><!-- /container --> 
