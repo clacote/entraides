@@ -1,4 +1,3 @@
-
 .DS_Store
 proto/**/tmp/
 proto/**/*.iml
@@ -7,7 +6,10 @@ proto/**/.project
 proto/**/.classpath
 proto/**/nbproject/
 proto/**/.settings/
-/proto/wicket/entraides/target/
+proto/play/modules/
+proto/play/test-result/
+proto/play/logs/
+proto/wicket/entraides/target/
 proto/wicket/target/*
 .idea/*
 out/*
