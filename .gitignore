@@ -7,3 +7,4 @@ proto/**/.classpath
 proto/**/nbproject/
 proto/**/.settings/
 /proto/wicket/entraides/target/
+proto/wicket/target/*
