@@ -1,0 +1,28 @@
+Interest(play):
+    name: Jardinage
+ 
+Interest(java):
+    name: Informatique
+ 
+Interest(tdd):
+    name: Anglais
+ 
+Interest(hadoop):
+    name: Babysitting
+
+Interest(javascript):
+    name: Poterie
+
+Interest(spring):
+    name: Running
+
+Member(agnes) :
+    firstname: Agnès
+    lastname: Crépet
+    password: agnes
+    login: agnes
+    email: agnes.crepet@gmail.com
+    description : Geek-trotteur
+    displayName: Gnès
+    twitterName: agnes_crepet
+    googlePlusId: 116189330666769817164
