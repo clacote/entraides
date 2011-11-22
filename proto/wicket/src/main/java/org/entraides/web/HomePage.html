@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket-contrib.googlecode.com/files/wicket.xsd">
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="templating/960.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="templating/base.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="templating/layout.css"/>
+</head>
+<body>
+
+<!--
+Tout ce qui est en dehors de wicket:extend ne sera pas inclus dans la page. Ce sont les pages dont cette page hérite
+qui définiront ce qui se trouve avant (header, ...) et après (footer). Si l'on souhaite vérifier le rendu global dans
+ firefox sans démarrer le serveur, il est possible de copier tout le code html à tester.
+-->
+<wicket:extend>
+    <p>
+        Bienvenue sur Entraides.fr le site de ...
+    </p>
+</wicket:extend>
+</body>
+</html>
